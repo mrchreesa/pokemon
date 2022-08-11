@@ -72,6 +72,7 @@ body {
   font-size: 1.5rem;
 }
 .poke-card {
+  background: linear-gradient(to left, #f8d5a3, #efefbb);
   border: 1px solid black;
   width: 48%;
   height: 90vh;

@@ -18,7 +18,6 @@ export default function Main() {
   const [loading, setLoading] = useState(true);
   const [currentPokemon, setCurrentPokemon] = useState(pokemons[0]);
   const [compare, setCompare] = useState(false);
-  const [genPokemons, setGenPokemons] = useState([]);
   const [startPage, setStartPage] = useState(0);
   const [endPage, setEndPage] = useState(20);
   const [genId, setGenId] = useState(null);
@@ -44,6 +43,7 @@ export default function Main() {
 
   useEffect(() => {
     if (genId) filterByGeneration();
+    // setGenId((prevState) => prevState);
   }, [genId]);
 
   useEffect(() => {
@@ -62,6 +62,7 @@ export default function Main() {
     // setLoading(true);
 
     setGenId(id);
+
     if (genId) {
       axios
         .get(`http://pokeapi.co/api/v2/generation/${genId}`)
@@ -73,7 +74,6 @@ export default function Main() {
         });
     }
   };
-  console.log(pokemons);
   const goToNextPage = () => {
     setCurrentPageUrl(nextPageUrl);
     setStartPage(startPage + 20);
@@ -90,6 +90,7 @@ export default function Main() {
     setEndPage(endPage - 20);
     console.log(startPage, endPage);
   };
+  console.log(genId);
 
   return (
     <div>
@@ -106,6 +107,7 @@ export default function Main() {
               setPokemonDataUrl={setPokemonDataUrl}
               compare={compare}
               setCompare={setCompare}
+              genId={genId}
             />
 
             <Pagination

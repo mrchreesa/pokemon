@@ -5,7 +5,7 @@ export default function PokemonList({
   pokemons,
   pokemonDataUrl,
   setPokemonDataUrl,
-  filterByGeneration,
+  genId,
   getPokemon,
   compare,
   setCompare,
@@ -18,18 +18,25 @@ export default function PokemonList({
     setCompare(!compare);
     console.log(compare);
   };
-  // console.log(pokemons);
+
+  const colourSwitch = () => {
+    if (genId === 1) {
+      return "fddfdf";
+    } else if (genId === 2) {
+      return "defde0";
+    }
+  };
+  console.log(genId);
   return (
     <div className="pokemon-list-container">
       {pokemons.map((pokemon) => (
         <>
           <button
-            onClick={
-              () =>
-                getCurrentPokemonUrl(
-                  `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-                )
-              // () => filterByGeneration(pokemon.name)
+            style={{ backgroundColor: genId == 1 ? "red" : null }}
+            onClick={() =>
+              getCurrentPokemonUrl(
+                `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+              )
             }
             className="btn-pokemon-list"
           >
