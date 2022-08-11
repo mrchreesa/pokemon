@@ -36,7 +36,7 @@ export default function Main() {
         setPrevPageUrl(res.data.previous);
         setLoading(false);
       });
-    filterByGeneration();
+    // filterByGeneration();
 
     return () => cancel();
   }, [currentPageUrl]);
@@ -78,10 +78,10 @@ export default function Main() {
     setCurrentPageUrl(nextPageUrl);
     setStartPage(startPage + 20);
     setEndPage(endPage + 20);
-    console.log(startPage, endPage);
-    if (genId) {
-      filterByGeneration();
-    }
+    // console.log(startPage, endPage);
+    // if (genId) {
+    //   filterByGeneration();
+    // }
   };
 
   const goToPreviousPage = () => {
