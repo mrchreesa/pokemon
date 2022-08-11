@@ -26,7 +26,7 @@ One of the callenges I had working on this app was that it took me a long time t
 <h2>If I had more time </h2>
 If I had more time I would implement a search bar for the user to easier find desired pokemon. I would also research more about the different Pokemon games and add features related to them.
 
-<br />
+<br >
 <p align="center">
  🔶🔶🔶 Technologies Used 🔶🔶🔶
  </p>
