@@ -32,8 +32,8 @@ export default function PokemonItem({
   //   }
   // }, [currentPokemon]);
 
-  const savePokeToProfie = () => {
-    let pokeName = currentPokemon.name;
+  const savePokeToProfie = (poke) => {
+    let pokeName = poke.name;
     let updatedState = savedPokemons.concat(pokeName);
     setSavedPokemons(updatedState);
   };
@@ -79,7 +79,10 @@ export default function PokemonItem({
                   );
                 })}
               </div>
-              <button className="btn-pokemon-list" onClick={savePokeToProfie}>
+              <button
+                className="btn-pokemon-list"
+                onClick={() => savePokeToProfie(currentPokemon)}
+              >
                 Save me
               </button>
             </div>
@@ -113,7 +116,10 @@ export default function PokemonItem({
                   );
                 })}
               </div>
-              <button className="btn-pokemon-list" onClick={savePokeToProfie}>
+              <button
+                className="btn-pokemon-list"
+                onClick={() => savePokeToProfie(comparePokemon)}
+              >
                 Save me
               </button>
             </div>
