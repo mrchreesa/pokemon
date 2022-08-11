@@ -24,9 +24,10 @@ The Pokemon App is build with React JS and vanilla CSS. External data from Poke 
 One of the callenges I had working on this app was that it took me a long time to figure out the type of API and data I was working with. In order to overcome this I had to step back and learn a bit more about Pokemons in general which then helped me working with the data structures and end points of the API.
 
 <h2>If I had more time </h2>
-If I had more time I would implement a search bar for the user to easier find desired pokemon. I would also research more about the different Pokemon games and add features related to them.
+If I had more time I would implement a search bar for the user to easily find desired pokemon. I would also research more about the different Pokemon games and add features related to them.
 
 <br >
+
 <p align="center">
  🔶🔶🔶 Technologies Used 🔶🔶🔶
  </p>
