@@ -19,20 +19,20 @@ export default function PokemonList({
     console.log(compare);
   };
 
-  const colourSwitch = () => {
-    if (genId === 1) {
-      return "fddfdf";
-    } else if (genId === 2) {
-      return "defde0";
-    }
-  };
+  // const colourSwitch = () => {
+  //   if (genId === 1) {
+  //     return "fddfdf";
+  //   } else if (genId === 2) {
+  //     return "defde0";
+  //   }
+  // };
   console.log(genId);
   return (
     <div className="pokemon-list-container">
       {pokemons.map((pokemon) => (
         <>
           <button
-            style={{ backgroundColor: genId == 1 ? "red" : null }}
+            // style={{ backgroundColor: genId == 1 ? "red" : null }}
             onClick={() =>
               getCurrentPokemonUrl(
                 `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`

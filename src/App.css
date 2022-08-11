@@ -132,6 +132,8 @@ body {
   width: 90%;
 }
 .saved-btn {
+  background: #d5cca1;
+
   width: 25%;
   padding: 20px 0;
   margin-top: 7px;
