@@ -10,7 +10,7 @@ export default function PokemonItem({
   savedPokemons,
   setSavedPokemons,
 }) {
-  const [currentPokemon, setCurrentPokemon] = useState(null);
+  const [currentPokemon, setCurrentPokemon] = useState(pokemons[0]);
   const [comparePokemon, setComparePokemon] = useState(pokemons[0]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function PokemonItem({
       axios.get(pokemonDataUrl).then((res) => setCurrentPokemon(res.data));
     }
   }, [pokemonDataUrl]);
-  console.log(currentPokemon);
+  console.log(pokemonDataUrl);
 
   useEffect(() => {
     axios.get(pokemonDataUrl).then((res) => setComparePokemon(res.data));
@@ -37,7 +37,7 @@ export default function PokemonItem({
     let updatedState = savedPokemons.concat(pokeName);
     setSavedPokemons(updatedState);
   };
-  console.log(savedPokemons);
+  console.log(currentPokemon);
 
   return (
     <>
@@ -79,7 +79,9 @@ export default function PokemonItem({
                   );
                 })}
               </div>
-              <button onClick={savePokeToProfie}>Save me</button>
+              <button className="btn-pokemon-list" onClick={savePokeToProfie}>
+                Save me
+              </button>
             </div>
           )}
           {!compare ? null : (
@@ -111,6 +113,9 @@ export default function PokemonItem({
                   );
                 })}
               </div>
+              <button className="btn-pokemon-list" onClick={savePokeToProfie}>
+                Save me
+              </button>
             </div>
           )}
         </>

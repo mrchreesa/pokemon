@@ -1,12 +1,12 @@
-# Getting Started with Create React App
+<h1 align="center">Welcome to Pokemon App 👋</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Gettin Started Guide
 
-## Available Scripts
+## Run Locally
 
-In the project directory, you can run:
-
-### `npm start`
+1. Open your terminal and then type. ### `git clone` {the url to the GitHub repo} This clones the repo.
+2. cd into the new folder and type. ###`npm install`. This installs the required dependencies.
+3. To run the React project. ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,57 +14,28 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Pokemon App is build with React JS and vanilla CSS. Data from Poke API is fetched with Axios to make HTTP requests easier. List of all pokemons is rendered on the left side with pagination of 20 items per page. Above it the user can select desired Generation and filter the search results accordingly. By selecting one of the pokemons a pokemon card is displayed on the right side with an image, name and all the attributes. By clicking on the Compare button, a second card is displayed on the right side and the user can easily compare the stats of different pokemons with the first one selected. Save Me button is also provided that saves the cards in Local Storage, so the user can save favourite pokemon and can easily find them under My Pokemons next time they visit the application. Additionally by clicking on a saved pokemon all the stats are displayed in the card above.
 
-### `npm run build`
+<p align="center">
+ 🔶🔶🔶 Technologies Used 🔶🔶🔶
+ </p>
+<p align="center">
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- React
+- Axios
+- Git
+- GitHub
+</p>
+</br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Author
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+👤 **Kristian Rahnev**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Twitter: [@mrchreesa](https://twitter.com/mrchreesa)
+- Github: [@mrchreesa](https://github.com/mrchreesa)
+- LinkedIn: [@kristian-rahnev-90b35913a/](https://linkedin.com/in/kristian-rahnev-90b35913a/)
