@@ -18,8 +18,9 @@ export default function Main() {
   const [loading, setLoading] = useState(true);
   const [currentPokemon, setCurrentPokemon] = useState(pokemons[0]);
   const [compare, setCompare] = useState(false);
-  const [startPage, setStartPage] = useState(0);
-  const [endPage, setEndPage] = useState(20);
+  const [postsPerPage, setPostPerPage] = useState(20);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pokemonsByGen, setPokemonsByGen] = useState([]);
   const [genId, setGenId] = useState(null);
   const [savedPokemons, setSavedPokemons] = useState([]);
 
@@ -36,14 +37,12 @@ export default function Main() {
         setPrevPageUrl(res.data.previous);
         setLoading(false);
       });
-    // filterByGeneration();
 
     return () => cancel();
   }, [currentPageUrl]);
 
   useEffect(() => {
-    if (genId) filterByGeneration();
-    // setGenId((prevState) => prevState);
+    filterByGeneration();
   }, [genId]);
 
   useEffect(() => {
@@ -61,36 +60,42 @@ export default function Main() {
   const filterByGeneration = (id) => {
     // setLoading(true);
 
-    setGenId(id);
-
-    if (genId) {
+    if (id) {
       axios
-        .get(`http://pokeapi.co/api/v2/generation/${genId}`)
+        .get(`http://pokeapi.co/api/v2/generation/${id}`)
         .then((res) => {
-          setPokemons(res.data.pokemon_species.slice(startPage, endPage));
+          setPokemonsByGen(res.data.pokemon_species);
+          setGenId(id);
         })
         .catch((err) => {
           console.log(err);
         });
     }
   };
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = pokemonsByGen.slice(indexOfFirstPost, indexOfLastPost);
+
   const goToNextPage = () => {
     setCurrentPageUrl(nextPageUrl);
-    setStartPage(startPage + 20);
-    setEndPage(endPage + 20);
-    // console.log(startPage, endPage);
-    // if (genId) {
-    //   filterByGeneration();
-    // }
+    console.log(currentPosts);
+    setCurrentPage((prevState) => {
+      if (currentPosts < 20 && null) {
+        setNextPageUrl(null);
+      } else {
+        return prevState + 1;
+      }
+    });
   };
 
   const goToPreviousPage = () => {
     setCurrentPageUrl(prevPageUrl);
-    setStartPage(startPage - 20);
-    setEndPage(endPage - 20);
-    console.log(startPage, endPage);
+    setCurrentPage((prevState) => prevState - 1);
   };
-  console.log(genId);
+
+  console.log(currentPosts, genId);
 
   return (
     <div>
@@ -101,6 +106,7 @@ export default function Main() {
           <div className="main-left">
             <Generations filterByGeneration={filterByGeneration} />
             <PokemonList
+              pokemonsByGen={currentPosts}
               pokemons={pokemons}
               setPokemons={setPokemons}
               pokemonDataUrl={pokemonDataUrl}
@@ -113,7 +119,6 @@ export default function Main() {
             <Pagination
               goToNextPage={nextPageUrl ? goToNextPage : null}
               goToPreviousPage={prevPageUrl ? goToPreviousPage : null}
-              filterByGeneration={filterByGeneration}
             />
           </div>
           <div className="main-right">
